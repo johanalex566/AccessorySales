@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="pedaleaApp">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- Styles -->
+    <link href="lib/bootstrap-5.1.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="lib/loading-bar.min.css" rel="stylesheet" />
+    <link href="lib/ag-grid/ag-grid.css" rel="stylesheet" />
+    <link href="lib/toaster/toaster.css" rel="stylesheet" />
+    <link href="lib/ag-grid/ag-theme-balham.css" rel="stylesheet" />
+    <link href="lib/MaterialIcons.css" rel="stylesheet" />
+
+    <!-- Scripts -->
+    <script src="lib/bootstrap-5.1.0/js/bootstrap.min.js"></script>
+    <script src="lib/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+    <script src="lib/Angularjs/angular.min.js"></script>
+    <script src="lib/Angularjs/angular-route.min.js"></script>
+    <script src="lib/ag-grid/ag-grid.min.js"></script>
+    <script src="lib/loading-bar.min.js"></script>
+    <script src="lib/toaster/toaster.js"></script>
+
+    <!-- Scripts page -->
+    <script src="app/app.js"></script>
+    <script src="app/modules/generalSvc.js"></script>
+    <script src="app/modules/MainCtrl.js"></script>
+    <script src="app/modules/suppliers/SuppliersCtrl.js"></script>
+    <script src="app/modules/products/ProductsCtrl.js"></script>
+    <script src="app/modules/generalIncome/generalIncomeCtrl.js"></script>
+
+    <!-- style pages -->
+    <link href="app/modules/home/home.css" rel="stylesheet" />
+
+</head>
+<body class="bg-light" ng-controller="MainController as ctrl">
+
+    <div ng-cloak>
+        <aside id="asideMenu" ng-include="ctrl.aside"></aside>
+        <div class="contentView" ng-view></div>
+    </div>
+
+</body>
+
+</html>

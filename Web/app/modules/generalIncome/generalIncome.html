@@ -1,0 +1,114 @@
+﻿<div style="margin-left: 60px;" class="row">
+    <div class="columna col-12 col-lg-9 col-sm-6 col-md-8">
+
+        <h3 class="mt-4">{{ctrl.title}}</h3>
+        <div class="col-6">
+            <a href="#contenido-1"
+               type="button"
+               class="btn btn-primary"
+               data-bs-toggle="collapse"
+               aria-expanded="false"
+               aria-controls="contenido-1">Información</a>
+            <div class="collapse mt-3" id="contenido-1">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ctrl.title}}</h2>
+                        <p class="card-text">
+                           Verifique los campos obligatorios para realizar el guardado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-6 ">
+
+                <h3>Campos producto</h3>
+
+                <div class="mb-2">
+                    <label for="correo" class="form-floating form-label">Nombre</label>
+                    <input ng-model="ctrl.productName" type="text" class="form-control" id="correo" aria-describedby="ayuda">
+                    <div id="ayuda" class="form-text">
+                        *Digité el nombre del producto.
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label for="mensaje" class="form-label">Código</label>
+                    <textarea ng-model="ctrl.productCode" class="form-control" name="mensaje" id="mensaje"></textarea>
+                    <div id="ayuda" class="form-text">
+                        *Digité el código de producto
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label for="mensaje" class="form-label">Descripción</label>
+                    <textarea ng-model="ctrl.productDescription" class="form-control" name="mensaje" id="mensaje"></textarea>
+                    <div id="ayuda" class="form-text">
+                        *Digité la descripción del producto.
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label for="mensaje" class="form-label">Stock</label>
+                    <textarea ng-model="ctrl.quantityStock" class="form-control" name="mensaje" id="mensaje"></textarea>
+                    <div id="ayuda" class="form-text">
+                        *Digité la cantidad de productos a ingresar.
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label for="mensaje" class="form-label">Valor</label>
+                    <input ng-model="ctrl.productValue" class="form-control" name="mensaje" id="mensaje">
+                    <div id="ayuda" class="form-text">
+                        *Digité el valor del producto.
+                    </div>
+                </div>
+
+
+                <div class="mb-2">
+                    <button ng-click="ctrl.saveProduct()" type="button" class="btn btn-primary">
+                        Guardar cambios
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="col-6">
+                <h3>Campos proveedor</h3>
+                <div class="mb-2">
+                    <label for="correo" class="form-label">Nombre</label>
+                    <input ng-model="ctrl.supplierName" type="text" class="form-control" id="correo" aria-describedby="ayuda">
+                    <div id="ayuda" class="form-text">
+                        Digité el nombre del proveedor.
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label for="mensaje" class="form-label">Dirección</label>
+                    <textarea ng-model="ctrl.address" class="form-control" name="mensaje" id="mensaje"></textarea>
+                    <div id="ayuda" class="form-text">
+                        Digité la dirección del proveedor.
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label for="mensaje" class="form-label">Telefono</label>
+                    <textarea ng-model="ctrl.phoneNumber" class="form-control" name="mensaje" id="mensaje"></textarea>
+                    <div id="ayuda" class="form-text">
+                        Digité el número célular del proveedor
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label for="mensaje" class="form-label">Correo</label>
+                    <textarea ng-model="ctrl.email" class="form-control" name="mensaje" id="mensaje"></textarea>
+                    <div id="ayuda" class="form-text">
+                        Digité  correo del proveedor
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
