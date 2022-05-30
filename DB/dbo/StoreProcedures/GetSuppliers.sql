@@ -1,0 +1,7 @@
+﻿CREATE PROCEDURE GetSuppliers
+
+AS
+BEGIN
+SELECT * FROM tblSuppliers 
+END
+GO
