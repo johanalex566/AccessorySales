@@ -51,7 +51,7 @@ function productsController($scope, UserService, $rootScope, $window, $filter, $
         }
 
         GeneralService.executeAjax({
-            url: `${UserService.ApiUrl}/Post`,
+            url: `${UserService.ApiUrl}`,
             data: StoredObjectParams,
             dataType: 'json',
             contentType: 'application/json',
@@ -77,7 +77,7 @@ function productsController($scope, UserService, $rootScope, $window, $filter, $
     ctrl.columns = [
         {
             headerName: "Nombre",
-            field: "name",
+            field: "Name",
             width: 150,
             cellStyle: { 'text-align': 'left' },
             sortable: true,
@@ -87,7 +87,7 @@ function productsController($scope, UserService, $rootScope, $window, $filter, $
         },
         {
             headerName: "Descripción",
-            field: "description",
+            field: "Description",
             width: 130,
             cellStyle: { 'text-align': 'left' },
             sortable: true,
@@ -97,7 +97,7 @@ function productsController($scope, UserService, $rootScope, $window, $filter, $
         },
         {
             headerName: "Cantidad",
-            field: "stock",
+            field: "Stock",
             width: 120,
             cellStyle: { 'text-align': 'left' },
             sortable: true,
@@ -112,7 +112,7 @@ function productsController($scope, UserService, $rootScope, $window, $filter, $
         },
         {
             headerName: "Valor",
-            field: "value",
+            field: "Value",
             width: 120,
             cellStyle: { 'text-align': 'left' },
             sortable: true,
@@ -124,7 +124,7 @@ function productsController($scope, UserService, $rootScope, $window, $filter, $
         },
         {
             headerName: "Fecha ingreso",
-            field: "dateCreated",
+            field: "CreationDate",
             width: 120,
             cellStyle: { 'text-align': 'left' },
             sortable: true,
@@ -151,8 +151,7 @@ function productsController($scope, UserService, $rootScope, $window, $filter, $
     ]
 
     ctrl.delete = function (ev, data) {
-        toastr.warning("Las imagenes e información asociada a este sitio turistico sera eliminada al precionar el botón ok");
-        if (!window.confirm("Esta seguro de eliminar el sitio turistico seleccionado?")) {
+        if (!window.confirm("Esta seguro de eliminar el producto seleccionado?")) {
             return;
         }
 
@@ -160,10 +159,10 @@ function productsController($scope, UserService, $rootScope, $window, $filter, $
         {
             "StoredParams":
                 [
-                    { "Name": "IdSitioTuristico", "Value": data.IdSitioTuristico.toString() },
+                    { "Name": "ProductId", "Value": data.ProductId.toString() },
                     { "Name": "Usuario", "Value": $window.localStorage.getItem('userName') }
                 ],
-            "StoredProcedureName": "EliminarSitioTuristico"
+            "StoredProcedureName": "DeleteProduct"
         }
 
         GeneralService.executeAjax({
@@ -176,7 +175,7 @@ function productsController($scope, UserService, $rootScope, $window, $filter, $
                     ctrl.response = response;
                     ctrl.getProducts();
                     ctrl.uploading = false;
-                    toastr.success("Sitio eliminado correctamente");
+                    toastr.success("Eliminado correctamente");
                 } else {
                     ctrl.messageLoginInvalid = 'No se encontraron datos';
                     ctrl.uploading = false;
