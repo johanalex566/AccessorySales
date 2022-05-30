@@ -11,7 +11,7 @@ App: hace referencia al Web Api encargado de acceder a la base de datos, este re
 
 DB: Esta constituido por todas las estructuras de base de datos principalmente tablas y procedimientos de almacenado necesarios para mantener una buena consistencia y nivelación de la misma.
 
-Web: Hace referencia al aplicativo web, este consume el Web Api (App) y alimienta la base de datos.
+Web: Hace referencia al aplicativo web, este consume el Web Api (App) y alimienta la base de datos. este es un SPA, single page application
 
 XamarinApp: Es un aplicativo movil construido en xamarin
 
