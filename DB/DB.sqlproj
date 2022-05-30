@@ -64,6 +64,7 @@
     <Build Include="dbo\Tables\tblSuppliers.sql" />
     <Build Include="dbo\Tables\tblProducts.sql" />
     <Build Include="dbo\StoreProcedures\GetProducts.sql" />
+    <Build Include="dbo\StoreProcedures\GetSuppliers.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\DummyData.sql" />
