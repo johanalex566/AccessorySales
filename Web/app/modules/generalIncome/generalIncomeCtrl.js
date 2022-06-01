@@ -7,6 +7,7 @@ generalIncomeController.$inject = ['$scope', 'UserService', '$rootScope', '$wind
 
 function generalIncomeController($scope, UserService, $rootScope, $window, $filter, $timeout, $location, GeneralService) {
     let ctrl = this;
+    ctrl.ViewSuppliers = true;
     ctrl.nameSite = $location.$$search.param.Name;
     ctrl.title = `${ctrl.nameSite}`;
 
@@ -49,7 +50,11 @@ function generalIncomeController($scope, UserService, $rootScope, $window, $filt
 
         obj = [
             {
-                "productName": ctrl.productName
+                "Name": ctrl.productName,
+                "Code": ctrl.productCode,
+                "Description": ctrl.productDescription,
+                "Stock": parseInt(ctrl.quantityStock),
+                "Value": parseFloat(ctrl.productValue)
             }
         ];
 
@@ -59,18 +64,16 @@ function generalIncomeController($scope, UserService, $rootScope, $window, $filt
                 { "Name": "jsonProduct", "Value": JSON.stringify(obj) }
 
             ],
-            "StoredProcedureName": "SaveProduct"
+            "StoredProcedureName": "SaveProducts"
         }
 
         GeneralService.executeAjax({
-            url: `${UserService.ApiUrl}/Post`,
+            url: `${UserService.ApiUrl}`,
             data: StoredObjectParams,
             dataType: 'json',
             contentType: 'application/json',
             success: function (response) {
                 if (response.exception == null) {
-                    ctrl.product = ctrl.transformRespond(response.value[0]);
-                    ctrl.IdProduct = parseInt(ctrl.product[0].IdProduct);
                     toastr.success("Cambios guardados correctamente");
                 }
             }
