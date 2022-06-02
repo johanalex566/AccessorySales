@@ -7,7 +7,7 @@ Oscar Walter
 
 La solucións consta de cuatro proyecto
 
-App: hace referencia al Web Api encargado de acceder a la base de datos, este recibe el nombre de procedimiento y parámetros necesarios por el procedimiento retornando una o multiples tablas.
+App: hace referencia al Web Api encargado de acceder a la base de datos, este recibe el nombre de procedimiento y parámetros necesarios retornando una o multiples tablas.
 
 DB: Esta constituido por todas las estructuras de base de datos principalmente tablas y procedimientos de almacenado necesarios para mantener una buena consistencia y nivelación de la misma.
 
