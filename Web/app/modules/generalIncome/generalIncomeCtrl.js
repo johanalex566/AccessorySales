@@ -7,12 +7,15 @@ generalIncomeController.$inject = ['$scope', 'UserService', '$rootScope', '$wind
 
 function generalIncomeController($scope, UserService, $rootScope, $window, $filter, $timeout, $location, GeneralService) {
     let ctrl = this;
-    ctrl.ViewSuppliers = true;
     ctrl.nameSite = $location.$$search.param.Name;
-    ctrl.title = `${ctrl.nameSite}`;
+    ctrl.title = `Ingreso ${ctrl.nameSite}`;
 
-    ctrl.AddTime = function () {
-        ctrl.newTimes.push(ctrl.defaultTime);
+    if (ctrl.nameSite == 'proveedores') {
+        ctrl.ViewSuppliers = false;
+        ctrl.ViewProducts = true;
+    } else {
+        ctrl.ViewSuppliers = true;
+        ctrl.ViewProducts = false;
     }
 
     ctrl.transformRespond = function (Data) {

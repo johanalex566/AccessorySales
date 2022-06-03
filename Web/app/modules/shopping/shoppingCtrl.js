@@ -1,12 +1,12 @@
 ﻿agGrid.initialiseAgGridWithAngular1(angular);
 
 angular
-    .module('pedaleaApp.productsController', [])
-    .controller('productsController', productsController);
+    .module('pedaleaApp.shoppingController', [])
+    .controller('shoppingController', shoppingController);
 
-productsController.$inject = ['$scope', 'UserService', '$rootScope', '$window', '$filter', '$timeout', '$location', 'GeneralService'];
+shoppingController.$inject = ['$scope', 'UserService', '$rootScope', '$window', '$filter', '$timeout', '$location', 'GeneralService'];
 
-function productsController($scope, UserService, $rootScope, $window, $filter, $timeout, $location, GeneralService) {
+function shoppingController($scope, UserService, $rootScope, $window, $filter, $timeout, $location, GeneralService) {
     let ctrl = this;
     ctrl.productsData = [];
     ctrl.transformRespond = function (Data) {
@@ -34,12 +34,12 @@ function productsController($scope, UserService, $rootScope, $window, $filter, $
     }
 
     ctrl.addNewSite = function () {
-        let newSite = { 'Name': 'productos' };
+        let newSite = { 'Name': 'Ingreso productos' };
         $location.path('/generalIncome').search({ param: newSite });
     }
 
     ctrl.modifiedSite = function (ev, data) {
-        let newSite = { 'Name': 'productos', 'data': data };
+        let newSite = { 'Name': 'Ingreso productos', 'data': data };
         $location.path('/generalIncome').search({ param: newSite });
     }
 

@@ -76,6 +76,8 @@
     <Content Include="app\modules\MainCtrl.js" />
     <Content Include="app\modules\products\Products.html" />
     <Content Include="app\modules\products\ProductsCtrl.js" />
+    <Content Include="app\modules\shopping\shopping.html" />
+    <Content Include="app\modules\shopping\shoppingCtrl.js" />
     <Content Include="app\modules\suppliers\Suppliers.html" />
     <Content Include="app\modules\suppliers\SuppliersCtrl.js" />
     <Content Include="index.html" />

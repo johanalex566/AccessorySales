@@ -1,7 +1,11 @@
 ﻿CREATE PROCEDURE GetSuppliers
-
 AS
 BEGIN
-SELECT * FROM tblSuppliers 
+	SELECT
+		[Name],
+		Adress, 
+		PhoneNumber 
+	FROM 
+		tblSuppliers 
 END
 GO

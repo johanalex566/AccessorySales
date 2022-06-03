@@ -6,6 +6,7 @@ angular
         'pedaleaApp.productsController',
         'pedaleaApp.suppliersController',
         'pedaleaApp.generalIncomeController',
+        'pedaleaApp.shoppingController',
         'ngRoute',
         'angular-loading-bar',
         'agGrid'
@@ -35,10 +36,10 @@ angular
                 controllerAs: 'ctrl',
                 templateUrl: 'app/modules/products/products.html'
             })
-            .when('/sales', {
-                controller: "salesController",
+            .when('/shopping', {
+                controller: "shoppingController",
                 controllerAs: 'ctrl',
-                templateUrl: 'app/modules/sales/sales.html'
+                templateUrl: 'app/modules/sales/shopping.html'
             })
             .when('/generalIncome', {
                 controller: "generalIncomeController",

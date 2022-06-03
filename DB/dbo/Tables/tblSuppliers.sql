@@ -1,3 +1,6 @@
-﻿create table tblSuppliers (SupplierID int primary key, 
-
-Name varchar(100), Adress varchar (100), PhoneNumber varchar (20))
+﻿CREATE TABLE tblSuppliers (
+SupplierId INT IDENTITY PRIMARY KEY, 
+Name VARCHAR(100),
+Adress VARCHAR(100), 
+PhoneNumber VARCHAR(20)
+)
