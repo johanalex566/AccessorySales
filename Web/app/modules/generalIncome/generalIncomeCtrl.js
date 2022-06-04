@@ -47,10 +47,25 @@ function generalIncomeController($scope, UserService, $rootScope, $window, $filt
 
     ctrl.saveProduct = function () {
         let obj = [];
+        let storedprocedure= "";
+
         if (!isValidSaved()) {
             return;
         }
+        if (ctrl.nameSite == 'proveedores') {
+            stroredprocedure = "SaveSupplier";
+            obj = [
+                {
+                    "Name": ctrl.supplierName,
+                    "Address": ctrl.address,
+                    "Phone": ctrl.phoneNumber,
+                    "Email": ctrl.email,
+                 }
+            ];
 
+        }
+        else {
+            stroredprocedure = "SaveProducts";
         obj = [
             {
                 "Name": ctrl.productName,
@@ -58,8 +73,9 @@ function generalIncomeController($scope, UserService, $rootScope, $window, $filt
                 "Description": ctrl.productDescription,
                 "Stock": parseInt(ctrl.quantityStock),
                 "Value": parseFloat(ctrl.productValue)
-            }
-        ];
+                }
+            ];
+        }
 
         let StoredObjectParams =
         {
@@ -67,7 +83,7 @@ function generalIncomeController($scope, UserService, $rootScope, $window, $filt
                 { "Name": "jsonProduct", "Value": JSON.stringify(obj) }
 
             ],
-            "StoredProcedureName": "SaveProducts"
+            "StoredProcedureName": stroredprocedure
         }
 
         GeneralService.executeAjax({
