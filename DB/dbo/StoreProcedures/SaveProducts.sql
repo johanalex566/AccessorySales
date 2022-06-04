@@ -1,10 +1,10 @@
-﻿CREATE PROCEDURE SaveProducts(@jsonProduct VARCHAR(3000))
+﻿CREATE PROCEDURE SaveProducts(@json VARCHAR(3000))
 AS BEGIN
 
 	SELECT
     [Name], Code ,[Description] ,Stock, [Value]
 	INTO #tempProduct
-    FROM OPENJSON(@jsonProduct)
+    FROM OPENJSON(@json)
     WITH (
      [Name]			VARCHAR(100) '$.Name'
     ,Code			VARCHAR(100) '$.Code'

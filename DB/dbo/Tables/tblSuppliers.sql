@@ -2,5 +2,6 @@
 SupplierId INT IDENTITY PRIMARY KEY, 
 Name VARCHAR(100),
 Adress VARCHAR(100), 
-PhoneNumber VARCHAR(20)
+PhoneNumber VARCHAR(20),
+Email VARCHAR(100)
 )

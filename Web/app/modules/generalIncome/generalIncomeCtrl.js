@@ -37,54 +37,43 @@ function generalIncomeController($scope, UserService, $rootScope, $window, $filt
     };
 
 
-    function isValidSaved() {
-        if (ctrl.productName == null) {
-            toastr.warning("Falta información por digitar, los campos marcados con * son  obligatorios");
-            return false;
-        }
-        return true;
-    }
 
-    ctrl.saveProduct = function () {
+    ctrl.save = function () {
         let obj = [];
-        let storedprocedure= "";
+        let storeProcedure = "";
 
-        if (!isValidSaved()) {
-            return;
-        }
         if (ctrl.nameSite == 'proveedores') {
-            stroredprocedure = "SaveSupplier";
+            storeProcedure = "SaveSuppliers";
             obj = [
                 {
                     "Name": ctrl.supplierName,
-                    "Address": ctrl.address,
+                    "Adress": ctrl.adress,
                     "Phone": ctrl.phoneNumber,
                     "Email": ctrl.email,
-                 }
-            ];
-
-        }
-        else {
-            stroredprocedure = "SaveProducts";
-        obj = [
-            {
-                "Name": ctrl.productName,
-                "Code": ctrl.productCode,
-                "Description": ctrl.productDescription,
-                "Stock": parseInt(ctrl.quantityStock),
-                "Value": parseFloat(ctrl.productValue)
                 }
             ];
         }
+        else {
+            storeProcedure = "SaveProducts";
+            obj = [
+                {
+                    "Name": ctrl.productName,
+                    "Code": ctrl.productCode,
+                    "Description": ctrl.productDescription,
+                    "Stock": parseInt(ctrl.quantityStock),
+                    "Value": parseFloat(ctrl.productValue)
+                }
+            ];
+        };
 
         let StoredObjectParams =
         {
             "StoredParams": [
-                { "Name": "jsonProduct", "Value": JSON.stringify(obj) }
+                { "Name": "json", "Value": JSON.stringify(obj) }
 
             ],
-            "StoredProcedureName": stroredprocedure
-        }
+            "StoredProcedureName": storeProcedure
+        };
 
         GeneralService.executeAjax({
             url: `${UserService.ApiUrl}`,

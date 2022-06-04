@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <h2 class="card-title">{{ctrl.title}}</h2>
                         <p class="card-text">
-                           Verifique los campos obligatorios para realizar el guardado.
+                            Verifique los campos obligatorios para realizar el guardado.
                         </p>
                     </div>
                 </div>
@@ -66,13 +66,6 @@
                     </div>
                 </div>
 
-
-                <div class="mb-2">
-                    <button ng-click="ctrl.saveProduct()" type="button" class="btn btn-primary">
-                        Guardar cambios
-                    </button>
-                </div>
-
             </div>
 
             <div ng-hide="ctrl.ViewSuppliers" class="col-6">
@@ -87,7 +80,7 @@
 
                 <div class="mb-2">
                     <label for="mensaje" class="form-label">Dirección</label>
-                    <textarea ng-model="ctrl.address" class="form-control" name="mensaje" id="mensaje"></textarea>
+                    <textarea ng-model="ctrl.adress" class="form-control" name="mensaje" id="mensaje"></textarea>
                     <div id="ayuda" class="form-text">
                         Digité la dirección del proveedor.
                     </div>
@@ -110,5 +103,11 @@
                 </div>
 
             </div>
+        </div>
+
+        <div class="mb-2">
+            <button ng-click="ctrl.save()" type="button" class="btn btn-primary">
+                Guardar cambios
+            </button>
         </div>
     </div>
