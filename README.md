@@ -5,7 +5,7 @@ Proyecto ITM programación distribuida
 Johan Sanchez,
 Oscar Walter
 
-La solucións consta de cuatro proyecto
+La solución consta de cuatro proyectos
 
 App: hace referencia al Web Api encargado de acceder a la base de datos, este recibe el nombre de procedimiento y parámetros necesarios retornando una o multiples tablas.
 
