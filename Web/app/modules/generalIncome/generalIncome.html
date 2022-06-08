@@ -24,19 +24,20 @@
         <div class="row mt-3">
             <div ng-hide="ctrl.ViewProducts" class="col-6 ">
 
-                <h3>Campos producto</h3>
+                <h3>Nuevo producto</h3>
 
                 <div class="mb-2">
-                    <label for="correo" class="form-floating form-label">Nombre</label>
-                    <input ng-model="ctrl.productName" type="text" class="form-control" id="correo" aria-describedby="ayuda">
+                    <label for="mensaje" class="form-floating form-label">Nombre</label>
+                    <input ng-model="ctrl.productName" type="text" class="form-control" id="mensaje" aria-describedby="ayuda">
                     <div id="ayuda" class="form-text">
-                        *Digité el nombre del producto.
+                         *Digité el nombre del producto.
+
                     </div>
                 </div>
 
                 <div class="mb-2">
                     <label for="mensaje" class="form-label">Código</label>
-                    <textarea ng-model="ctrl.productCode" class="form-control" name="mensaje" id="mensaje"></textarea>
+                    <input ng-model="ctrl.productCode" class="form-control" name="mensaje" id="mensaje">
                     <div id="ayuda" class="form-text">
                         *Digité el código de producto
                     </div>
@@ -44,7 +45,7 @@
 
                 <div class="mb-2">
                     <label for="mensaje" class="form-label">Descripción</label>
-                    <textarea ng-model="ctrl.productDescription" class="form-control" name="mensaje" id="mensaje"></textarea>
+                    <input ng-model="ctrl.productDescription" class="form-control" name="mensaje" id="mensaje">
                     <div id="ayuda" class="form-text">
                         *Digité la descripción del producto.
                     </div>
@@ -52,18 +53,18 @@
 
                 <div class="mb-2">
                     <label for="mensaje" class="form-label">Stock</label>
-                    <textarea ng-model="ctrl.quantityStock" class="form-control" name="mensaje" id="mensaje"></textarea>
+                    <input ng-model="ctrl.quantityStock" class="form-control" name="mensaje" id="mensaje">
                     <div id="ayuda" class="form-text">
                         *Digité la cantidad de productos a ingresar.
                     </div>
                 </div>
 
                 <div class="mb-2">
-                    <label for="mensaje" class="form-label">Valor</label>
-                    <input ng-model="ctrl.productValue" class="form-control" name="mensaje" id="mensaje">
-                    <div id="ayuda" class="form-text">
-                        *Digité el valor del producto.
-                    </div>
+                     <label for="mensaje" class="form-label">Valor</label>
+                     <input ng-model="ctrl.productValue" class="form-control" name="mensaje" id="mensaje">
+                     <div id="ayuda" class="form-text">
+                          *Digité el valor del producto.
+                     </div>
                 </div>
 
                 <div class="mb-2">
@@ -74,13 +75,13 @@
             </div>
 
             <div ng-hide="ctrl.ViewSuppliers" class="col-6">
-                <h3>Campos proveedor</h3>
+                <h3>Nuevo proveedor</h3>
                 <div class="mb-2">
-                    <label for="correo" class="form-label">Nombre</label>
-                    <input ng-model="ctrl.supplierName" type="text" class="form-control" id="correo" aria-describedby="ayuda">
-                    <div id="ayuda" class="form-text">
-                        Digité el nombre del proveedor.
-                    </div>
+                     <label for="correo" class="form-label">Nombre</label>
+                     <input ng-model="ctrl.supplierName" type="text" class="form-control" id="correo" aria-describedby="ayuda">
+                     <div id="ayuda" class="form-text">
+                          Digité el nombre del proveedor.
+                     </div>
                 </div>
 
                 <div class="mb-2">
@@ -92,19 +93,19 @@
                 </div>
 
                 <div class="mb-2">
-                    <label for="mensaje" class="form-label">Telefono</label>
-                    <textarea ng-model="ctrl.phoneNumber" class="form-control" name="mensaje" id="mensaje"></textarea>
-                    <div id="ayuda" class="form-text">
-                        Digité el número célular del proveedor
-                    </div>
+                     <label for="mensaje" class="form-label">Telefono</label>
+                     <input ng-model="ctrl.phoneNumber" class="form-control" name="mensaje" id="mensaje">
+                     <div id="ayuda" class="form-text">
+                          Digité el número célular del proveedor
+                     </div>
                 </div>
 
                 <div class="mb-2">
-                    <label for="mensaje" class="form-label">Correo</label>
-                    <textarea ng-model="ctrl.email" class="form-control" name="mensaje" id="mensaje"></textarea>
-                    <div id="ayuda" class="form-text">
-                        Digité  correo del proveedor
-                    </div>
+                     <label for="mail" class="form-label">Correo</label>
+                     <input ng-model="ctrl.email" type="email" class="form-control" name="mensaje" id="mail">
+                     <div id="ayuda" class="form-text">
+                          Digité  correo del proveedor
+                     </div>
                 </div>
 
             </div>
