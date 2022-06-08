@@ -6,5 +6,7 @@ Code VARCHAR(20),
 [Description] VARCHAR(100),
 Stock INT,
 [Value] DECIMAL,
-CreationDate DATETIME DEFAULT GETDATE()
+CreationDate DATETIME DEFAULT GETDATE(),
+SupplierId INT,
+FOREIGN KEY (SupplierId) REFERENCES tblSuppliers(SupplierId)
 )

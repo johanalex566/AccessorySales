@@ -145,7 +145,7 @@ function productsController($scope, UserService, $rootScope, $window, $filter, $
                 if (params.node.rowPinned) {
                     return '';
                 }
-                return "<span title='actualizar' class='material-icons' ng-click='ctrl.modifiedSite($event, this.data)'>edit</span> <span style='margin-left: 15px;'  title='Eliminar' ng-click='ctrl.delete($event, this.data)' class='material-icons'>delete</span>"
+                return "<span style='margin-left: 15px;'  title='Eliminar' ng-click='ctrl.delete($event, this.data)' class='material-icons'>delete</span>"
             }
         }
     ]
@@ -157,31 +157,29 @@ function productsController($scope, UserService, $rootScope, $window, $filter, $
 
         let StoredObjectParams =
         {
-            "StoredParams":
-                [
-                    { "Name": "ProductId", "Value": data.ProductId.toString() },
-                    { "Name": "Usuario", "Value": $window.localStorage.getItem('userName') }
-                ],
+            "StoredParams": [
+                { "Name": "ProductId", "Value": (data.ProductId)  }
+
+            ],
             "StoredProcedureName": "DeleteProduct"
-        }
+        };
+
 
         GeneralService.executeAjax({
-            url: `${UserService.ApiUrl}/Post`,
+            url: `${UserService.ApiUrl}`,
             data: StoredObjectParams,
             dataType: 'json',
             contentType: 'application/json',
             success: function (response) {
                 if (response.exception == null) {
-                    ctrl.response = response;
-                    ctrl.getProducts();
-                    ctrl.uploading = false;
                     toastr.success("Eliminado correctamente");
+                    ctrl.getProducts();
                 } else {
                     ctrl.messageLoginInvalid = 'No se encontraron datos';
-                    ctrl.uploading = false;
                 }
             }
         });
+
     };
 
     ctrl.productGrid = {

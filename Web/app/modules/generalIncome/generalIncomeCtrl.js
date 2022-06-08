@@ -9,6 +9,7 @@ function generalIncomeController($scope, UserService, $rootScope, $window, $filt
     let ctrl = this;
     ctrl.nameSite = $location.$$search.param.Name;
     ctrl.title = `Ingreso ${ctrl.nameSite}`;
+    ctrl.suppliers = [];
 
     if (ctrl.nameSite == 'proveedores') {
         ctrl.ViewSuppliers = false;
@@ -61,7 +62,8 @@ function generalIncomeController($scope, UserService, $rootScope, $window, $filt
                     "Code": ctrl.productCode,
                     "Description": ctrl.productDescription,
                     "Stock": parseInt(ctrl.quantityStock),
-                    "Value": parseFloat(ctrl.productValue)
+                    "Value": parseFloat(ctrl.productValue),
+                    "SupplierId": parseInt(ctrl.selectedsupplier)
                 }
             ];
         };
@@ -96,34 +98,15 @@ function generalIncomeController($scope, UserService, $rootScope, $window, $filt
         }
 
         GeneralService.executeAjax({
-            url: `${UserService.ApiUrl}/PostJWT`,
+            url: `${UserService.ApiUrl}`,
             data: StoredObjectParams,
             dataType: 'json',
             contentType: 'application/json',
             success: function (response) {
                 if (response.exception == null) {
                     ctrl.suppliers = ctrl.transformRespond(response.value[0]);
-                }
-            }
-        });
-    };
-
-    ctrl.getProduct = function () {
-        let StoredObjectParams =
-        {
-            "StoredParams": [{ "Name": "ProductId", "Value": "-1" }],
-            "StoredProcedureName": "GetProduct"
-        }
-
-        GeneralService.executeAjax({
-            url: `${UserService.ApiUrl}/PostJWT`,
-            data: StoredObjectParams,
-            dataType: 'json',
-            contentType: 'application/json',
-            success: function (response) {
-                if (response.exception == null) {
-                    ctrl.produts = ctrl.transformRespond(response.value[0]);
-                    fillLoadData(ctrl.produts[0]);
+                } else {
+                    ctrl.messageLoginInvalid = 'No se encontraron datos de proveedores';
                 }
             }
         });
@@ -153,7 +136,6 @@ function generalIncomeController($scope, UserService, $rootScope, $window, $filt
     }
 
     angular.element(document).ready(function () {
-        ctrl.getTowns();
-        ctrl.getProduct();
+        ctrl.getSuppliers();
     });
 }

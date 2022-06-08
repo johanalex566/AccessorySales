@@ -2,6 +2,7 @@
 AS
 BEGIN
 	SELECT
+		SupplierId,
 		[Name],
 		Adress, 
 		PhoneNumber 
