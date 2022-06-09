@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -86,11 +86,5 @@
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\XamarinAppExam\XamarinAppExam.csproj">
-      <Project>{9D1E1D75-A3FF-4682-AF39-7350FA85B239}</Project>
-      <Name>XamarinAppExam</Name>
-    </ProjectReference>
-  </ItemGroup>
- <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

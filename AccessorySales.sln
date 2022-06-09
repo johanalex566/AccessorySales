@@ -9,10 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App", "App\App.csproj", "{0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{B8A4D4A1-9CFF-4616-858C-2F938CAB7CED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamarinAppExam", "XamarinAppExam\XamarinAppExam.csproj", "{A782BC4E-AD67-4067-BAA5-910E59BFF790}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinAppExam.Android", "XamarinAppExam.Android\XamarinAppExam.Android.csproj", "{AEA544FC-40B8-4892-A9FD-EC6FB7CC241E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,16 +29,6 @@ Global
 		{B8A4D4A1-9CFF-4616-858C-2F938CAB7CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8A4D4A1-9CFF-4616-858C-2F938CAB7CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8A4D4A1-9CFF-4616-858C-2F938CAB7CED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A782BC4E-AD67-4067-BAA5-910E59BFF790}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A782BC4E-AD67-4067-BAA5-910E59BFF790}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A782BC4E-AD67-4067-BAA5-910E59BFF790}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A782BC4E-AD67-4067-BAA5-910E59BFF790}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AEA544FC-40B8-4892-A9FD-EC6FB7CC241E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AEA544FC-40B8-4892-A9FD-EC6FB7CC241E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AEA544FC-40B8-4892-A9FD-EC6FB7CC241E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{AEA544FC-40B8-4892-A9FD-EC6FB7CC241E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AEA544FC-40B8-4892-A9FD-EC6FB7CC241E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AEA544FC-40B8-4892-A9FD-EC6FB7CC241E}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
