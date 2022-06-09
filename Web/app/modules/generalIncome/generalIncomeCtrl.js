@@ -21,8 +21,8 @@ function generalIncomeController($scope, UserService, $rootScope, $window, $filt
 
     ctrl.transformRespond = function (Data) {
         let Result = [];
-        let Columns = Data.columns;
-        let Rows = Data.rows
+        let Columns = Data.Columns;
+        let Rows = Data.Rows;
 
         for (let i = 0; i < Rows.length; i++) {
 
@@ -104,7 +104,7 @@ function generalIncomeController($scope, UserService, $rootScope, $window, $filt
             contentType: 'application/json',
             success: function (response) {
                 if (response.exception == null) {
-                    ctrl.suppliers = ctrl.transformRespond(response.value[0]);
+                    ctrl.suppliers = ctrl.transformRespond(response.Value[0]);
                 } else {
                     ctrl.messageLoginInvalid = 'No se encontraron datos de proveedores';
                 }

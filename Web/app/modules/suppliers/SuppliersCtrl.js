@@ -11,8 +11,8 @@ function suppliersController($scope, UserService, $rootScope, $window, $filter, 
     ctrl.productsData = [];
     ctrl.transformRespond = function (Data) {
         let Result = [];
-        let Columns = Data.columns;
-        let Rows = Data.rows;
+        let Columns = Data.Columns;
+        let Rows = Data.Rows;
 
         for (let i = 0; i < Rows.length; i++) {
 
@@ -58,7 +58,7 @@ function suppliersController($scope, UserService, $rootScope, $window, $filter, 
             success: function (response) {
                 if (response.exception == null) {
                     ctrl.productGrid.api.setRowData([]);
-                    ctrl.productsData = ctrl.transformRespond(response.value[0]);
+                    ctrl.productsData = ctrl.transformRespond(response.Value[0]);
                     ctrl.productGrid.api.setRowData(ctrl.productsData);
                     ctrl.resizeGrid();
                 } else {

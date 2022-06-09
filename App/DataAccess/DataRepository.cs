@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using App.Helper;
 
 namespace App.DataAccess
 {
@@ -18,6 +19,26 @@ namespace App.DataAccess
         {
             Configuration = configuration;
             ConnString = Configuration.GetValue<string>("ConnectionStrings:ConnString");
+        }
+
+        public List<Product> GetProducts()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection connection = new SqlConnection(ConnString))
+            {
+                using (SqlCommand command = new SqlCommand("GetProducts", connection))
+                {
+                    connection.Open();
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.ExecuteNonQuery();
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+            return dt.DataTableToList<Product>();
         }
 
         public StoredObjectResponse ExecuteStoredProcedure(StoredObjectParams StoredObjectParams)

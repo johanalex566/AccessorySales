@@ -18,7 +18,11 @@ namespace App
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.PropertyNamingPolicy = null;
+            });
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -28,7 +32,7 @@ namespace App
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors(options => options.WithOrigins("*").AllowAnyMethod().AllowAnyHeader()); 
+            app.UseCors(options => options.WithOrigins("*").AllowAnyMethod().AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
