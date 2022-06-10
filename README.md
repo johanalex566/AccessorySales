@@ -15,3 +15,6 @@ Web: Hace referencia al aplicativo web, este consume el Web Api (App) y alimient
 
 XamarinApp: Es un aplicativo movil construido en xamarin
 
+![image](https://user-images.githubusercontent.com/40399697/172974380-ccabbc02-29d7-40ba-a302-cdb30c90d36a.png)
+
+
